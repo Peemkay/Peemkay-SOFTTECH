@@ -1,0 +1,19 @@
+{
+  "production": {
+    "port": 3000,
+    "host": "0.0.0.0",
+    "description": "Production server for built web app"
+  },
+  "development": {
+    "port": 3001,
+    "host": "0.0.0.0",
+    "description": "Development server with hot reload"
+  },
+  "backup_ports": [3002, 3003, 3004, 3005],
+  "project": {
+    "name": "Peemkay SOFTTECH Portfolio",
+    "description": "Professional Software Development Services",
+    "author": "Peemkay SOFTTECH",
+    "version": "1.0.0"
+  }
+}

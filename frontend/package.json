@@ -1,0 +1,37 @@
+{
+  "name": "peemkay-softtech-portfolio",
+  "version": "1.0.0",
+  "description": "Professional Software Development Services Portfolio Website",
+  "author": "Peemkay SOFTTECH",
+  "license": "MIT",
+  "scripts": {
+    "start": "python -m http.server 3000 --bind 0.0.0.0 --directory build/web",
+    "dev": "flutter run -d web-server --web-port=3001 --web-hostname=0.0.0.0",
+    "build": "flutter build web",
+    "serve": "npm run build && npm run start",
+    "clean": "flutter clean && flutter pub get",
+    "analyze": "flutter analyze",
+    "test": "flutter test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peemkay-softtech/portfolio"
+  },
+  "keywords": [
+    "flutter",
+    "web",
+    "portfolio",
+    "software-development",
+    "peemkay-softtech"
+  ],
+  "engines": {
+    "node": ">=14.0.0",
+    "python": ">=3.6.0"
+  },
+  "config": {
+    "ports": {
+      "production": 3000,
+      "development": 3001
+    }
+  }
+}

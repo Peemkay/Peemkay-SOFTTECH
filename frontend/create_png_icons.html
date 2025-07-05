@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Peemkay SOFTTECH Icons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        .icon-container {
+            margin: 20px 0;
+        }
+        canvas {
+            border: 1px solid #FF6347;
+            margin: 10px;
+            background: white;
+        }
+        button {
+            background: #FF6347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #DC143C;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Peemkay SOFTTECH Clean Logo Generator</h1>
+    <p>Generate clean, professional software development icons:</p>
+    <p><strong>Design:</strong> Minimalist black background, tomato border, clean white "P" letter</p>
+    
+    <div class="icon-container">
+        <h3>Favicon (16x16)</h3>
+        <canvas id="favicon16" width="16" height="16"></canvas>
+        <button onclick="generateIcon('favicon16', 16)">Generate</button>
+        <button onclick="downloadCanvas('favicon16', 'favicon.png')">Download</button>
+    </div>
+    
+    <div class="icon-container">
+        <h3>Icon 192x192</h3>
+        <canvas id="icon192" width="192" height="192"></canvas>
+        <button onclick="generateIcon('icon192', 192)">Generate</button>
+        <button onclick="downloadCanvas('icon192', 'Icon-192.png')">Download</button>
+    </div>
+    
+    <div class="icon-container">
+        <h3>Icon 512x512</h3>
+        <canvas id="icon512" width="512" height="512"></canvas>
+        <button onclick="generateIcon('icon512', 512)">Generate</button>
+        <button onclick="downloadCanvas('icon512', 'Icon-512.png')">Download</button>
+    </div>
+
+    <script>
+        function generateIcon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+
+            // Calculate dimensions
+            const padding = size * 0.05;
+            const cornerRadius = size * 0.15;
+
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#000000');
+            gradient.addColorStop(0.5, '#1a1a1a');
+            gradient.addColorStop(1, '#2d2d2d');
+
+            // Draw background square with rounded corners
+            ctx.fillStyle = gradient;
+            roundRect(ctx, padding, padding, size - 2*padding, size - 2*padding, cornerRadius);
+            ctx.fill();
+
+            // Draw border
+            ctx.strokeStyle = '#FF6347';
+            ctx.lineWidth = size * 0.02;
+            roundRect(ctx, padding, padding, size - 2*padding, size - 2*padding, cornerRadius);
+            ctx.stroke();
+
+            if (size >= 64) {
+                // For larger icons, draw code editor window
+                const windowX = size * 0.15;
+                const windowY = size * 0.25;
+                const windowW = size * 0.7;
+                const windowH = size * 0.5;
+
+                // Code window background
+                ctx.fillStyle = '#000000';
+                roundRect(ctx, windowX, windowY, windowW, windowH, size * 0.03);
+                ctx.fill();
+
+                // Window header
+                ctx.fillStyle = '#FF6347';
+                roundRect(ctx, windowX, windowY, windowW, size * 0.08, size * 0.03);
+                ctx.fill();
+
+                // Window controls
+                ctx.fillStyle = '#FFFFFF';
+                const controlSize = size * 0.015;
+                ctx.beginPath();
+                ctx.arc(windowX + size * 0.05, windowY + size * 0.04, controlSize, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(windowX + size * 0.08, windowY + size * 0.04, controlSize, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(windowX + size * 0.11, windowY + size * 0.04, controlSize, 0, 2 * Math.PI);
+                ctx.fill();
+
+                // Code lines
+                ctx.fillStyle = '#FF6347';
+                ctx.fillRect(windowX + size * 0.05, windowY + size * 0.15, size * 0.2, size * 0.02);
+                ctx.fillStyle = '#FFFFFF';
+                ctx.fillRect(windowX + size * 0.05, windowY + size * 0.2, size * 0.3, size * 0.015);
+                ctx.fillRect(windowX + size * 0.08, windowY + size * 0.25, size * 0.25, size * 0.015);
+            }
+
+            // Draw "P" letter
+            ctx.fillStyle = '#FFFFFF';
+            ctx.strokeStyle = '#FFFFFF';
+            ctx.lineWidth = size * 0.04;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            const pX = size * 0.6;
+            const pY = size * 0.35;
+            const pHeight = size * 0.3;
+            const pWidth = size * 0.15;
+
+            // Draw P shape
+            ctx.beginPath();
+            ctx.moveTo(pX, pY);
+            ctx.lineTo(pX, pY + pHeight);
+            ctx.moveTo(pX, pY);
+            ctx.lineTo(pX + pWidth, pY);
+            ctx.lineTo(pX + pWidth, pY + pHeight * 0.4);
+            ctx.lineTo(pX, pY + pHeight * 0.4);
+            ctx.stroke();
+
+            // Add tech accent dots
+            ctx.fillStyle = '#FF6347';
+            ctx.beginPath();
+            ctx.arc(size * 0.85, size * 0.15, size * 0.01, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(size * 0.15, size * 0.85, size * 0.01, 0, 2 * Math.PI);
+            ctx.fill();
+
+            console.log(`Generated ${size}x${size} professional software development icon`);
+        }
+
+        function roundRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+        }
+        
+        function downloadCanvas(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            console.log(`Downloaded ${filename}`);
+        }
+        
+        // Generate all icons on page load
+        window.onload = function() {
+            generateIcon('favicon16', 16);
+            generateIcon('icon192', 192);
+            generateIcon('icon512', 512);
+        };
+    </script>
+</body>
+</html>
