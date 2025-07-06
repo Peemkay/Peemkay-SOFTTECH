@@ -23,6 +23,7 @@ class PortfolioScreen extends ConsumerWidget {
 
     return Scaffold(
       body: AnimatedBackground(
+        key: const ValueKey('portfolio_background'),
         enableParticles: true,
         enableGradientShift: true,
         enableFloatingElements: !isMobile,
@@ -722,4 +723,3 @@ class _StatCard extends StatelessWidget {
     );
   }
 }
-

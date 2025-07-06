@@ -15,7 +15,6 @@ import '../widgets/hero_section.dart';
 import '../widgets/services_preview.dart';
 import '../widgets/portfolio_preview.dart';
 import '../widgets/about_preview.dart';
-import '../widgets/contact_preview.dart';
 import '../widgets/app_footer.dart';
 import '../widgets/glass_container.dart';
 import '../widgets/animated_background.dart';
@@ -82,6 +81,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
     return Scaffold(
       backgroundColor: AppColors.backgroundDark,
       body: AnimatedBackground(
+        key: const ValueKey('home_background'),
         enableParticles: true,
         enableGradientShift: true,
         enableFloatingElements: !isMobile,
@@ -142,18 +142,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                         begin: 0.2,
                         duration: AppConstants.longAnimation,
                         delay: const Duration(milliseconds: 600),
-                      )
-                      .fadeIn(),
-                ),
-
-                // Contact Preview
-                SliverToBoxAdapter(
-                  child: const ContactPreview()
-                      .animate()
-                      .slideY(
-                        begin: 0.2,
-                        duration: AppConstants.longAnimation,
-                        delay: const Duration(milliseconds: 800),
                       )
                       .fadeIn(),
                 ),

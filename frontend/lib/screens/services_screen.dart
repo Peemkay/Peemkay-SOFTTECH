@@ -24,6 +24,7 @@ class ServicesScreen extends ConsumerWidget {
 
     return Scaffold(
       body: AnimatedBackground(
+        key: const ValueKey('services_background'),
         enableParticles: true,
         enableGradientShift: true,
         enableFloatingElements: !isMobile,
@@ -258,6 +259,7 @@ class ServicesScreen extends ConsumerWidget {
             ],
             'technologies': ['Flutter', 'Python', 'AI/ML', 'IoT'],
             'color': AppColors.primary,
+            'backgroundImage': 'assets/images/enterprise_solutions_bg.png',
           },
           {
             'title': 'Banking & Finance',
@@ -272,6 +274,7 @@ class ServicesScreen extends ConsumerWidget {
             ],
             'technologies': ['Flutter', 'Python', 'Blockchain', 'APIs'],
             'color': AppColors.success,
+            'backgroundImage': 'assets/images/enterprise_solutions_bg.png',
           },
           {
             'title': 'Educational Platforms',
@@ -286,6 +289,7 @@ class ServicesScreen extends ConsumerWidget {
             ],
             'technologies': ['Flutter', 'Python', 'Cloud', 'Analytics'],
             'color': AppColors.accent,
+            'backgroundImage': 'assets/images/education_universities_bg.png',
           },
           {
             'title': 'E-Commerce Solutions',
@@ -300,6 +304,7 @@ class ServicesScreen extends ConsumerWidget {
             ],
             'technologies': ['Flutter', 'Python', 'Payment APIs', 'Cloud'],
             'color': AppColors.warning,
+            'backgroundImage': 'assets/images/ecommerce_shopping_bg.png',
           },
           {
             'title': 'Healthcare Systems',
@@ -314,6 +319,7 @@ class ServicesScreen extends ConsumerWidget {
             ],
             'technologies': ['Flutter', 'Python', 'AI', 'Cloud'],
             'color': AppColors.accent,
+            'backgroundImage': 'assets/images/restaurant_food_bg.png',
           },
           {
             'title': 'Transportation & Logistics',
@@ -328,6 +334,7 @@ class ServicesScreen extends ConsumerWidget {
             ],
             'technologies': ['Flutter', 'Python', 'Maps API', 'Real-time'],
             'color': AppColors.primary,
+            'backgroundImage': 'assets/images/transportation_delivery_bg.png',
           },
         ];
 
@@ -518,7 +525,21 @@ class _ServiceCardState extends State<_ServiceCard> {
         transform: Matrix4.identity()..scale(_isHovered ? 1.02 : 1.0),
         child: Container(
           decoration: BoxDecoration(
-            gradient: AppColors.blackCardGradient,
+            gradient: widget.service['backgroundImage'] != null
+                ? null
+                : AppColors.blackCardGradient,
+            image: widget.service['backgroundImage'] != null
+                ? DecorationImage(
+                    image: AssetImage(
+                      widget.service['backgroundImage'] as String,
+                    ),
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                      Colors.black.withValues(alpha: 0.7),
+                      BlendMode.darken,
+                    ),
+                  )
+                : null,
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
               color: _isHovered

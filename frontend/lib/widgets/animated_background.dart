@@ -28,7 +28,7 @@ class _AnimatedBackgroundState extends State<AnimatedBackground>
   late AnimationController _gradientController;
   late AnimationController _particleController;
   late AnimationController _floatingController;
-  
+
   late Animation<double> _gradientAnimation;
   late Animation<double> _particleAnimation;
   late Animation<double> _floatingAnimation;
@@ -36,17 +36,20 @@ class _AnimatedBackgroundState extends State<AnimatedBackground>
   @override
   void initState() {
     super.initState();
-    
+    _initializeAnimations();
+  }
+
+  void _initializeAnimations() {
     _gradientController = AnimationController(
       duration: const Duration(seconds: 8),
       vsync: this,
     );
-    
+
     _particleController = AnimationController(
       duration: const Duration(seconds: 20),
       vsync: this,
     );
-    
+
     _floatingController = AnimationController(
       duration: const Duration(seconds: 15),
       vsync: this,
@@ -55,25 +58,44 @@ class _AnimatedBackgroundState extends State<AnimatedBackground>
     _gradientAnimation = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(parent: _gradientController, curve: Curves.easeInOut),
     );
-    
+
     _particleAnimation = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(parent: _particleController, curve: Curves.linear),
     );
-    
+
     _floatingAnimation = Tween<double>(begin: 0, end: 1).animate(
       CurvedAnimation(parent: _floatingController, curve: Curves.easeInOut),
     );
 
+    _startAnimations();
+  }
+
+  void _startAnimations() {
     if (widget.enableGradientShift) {
       _gradientController.repeat(reverse: true);
     }
-    
+
     if (widget.enableParticles) {
       _particleController.repeat();
     }
-    
+
     if (widget.enableFloatingElements) {
       _floatingController.repeat(reverse: true);
+    }
+  }
+
+  @override
+  void didUpdateWidget(AnimatedBackground oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    // Restart animations if widget properties changed
+    if (oldWidget.enableGradientShift != widget.enableGradientShift ||
+        oldWidget.enableParticles != widget.enableParticles ||
+        oldWidget.enableFloatingElements != widget.enableFloatingElements) {
+      _gradientController.reset();
+      _particleController.reset();
+      _floatingController.reset();
+      _startAnimations();
     }
   }
 
@@ -152,13 +174,15 @@ class ParticlePainter extends CustomPainter {
   ParticlePainter(this.animationValue) {
     // Generate particles
     for (int i = 0; i < 50; i++) {
-      particles.add(Particle(
-        x: math.Random().nextDouble(),
-        y: math.Random().nextDouble(),
-        size: math.Random().nextDouble() * 3 + 1,
-        speed: math.Random().nextDouble() * 0.5 + 0.1,
-        opacity: math.Random().nextDouble() * 0.5 + 0.1,
-      ));
+      particles.add(
+        Particle(
+          x: math.Random().nextDouble(),
+          y: math.Random().nextDouble(),
+          size: math.Random().nextDouble() * 3 + 1,
+          speed: math.Random().nextDouble() * 0.5 + 0.1,
+          opacity: math.Random().nextDouble() * 0.5 + 0.1,
+        ),
+      );
     }
   }
 
@@ -167,16 +191,13 @@ class ParticlePainter extends CustomPainter {
     final paint = Paint()..style = PaintingStyle.fill;
 
     for (final particle in particles) {
-      final x = (particle.x + animationValue * particle.speed) % 1.0 * size.width;
+      final x =
+          (particle.x + animationValue * particle.speed) % 1.0 * size.width;
       final y = particle.y * size.height;
-      
+
       paint.color = AppColors.primary.withValues(alpha: particle.opacity * 0.3);
-      
-      canvas.drawCircle(
-        Offset(x, y),
-        particle.size,
-        paint,
-      );
+
+      canvas.drawCircle(Offset(x, y), particle.size, paint);
     }
   }
 
@@ -198,12 +219,14 @@ class FloatingElementsPainter extends CustomPainter {
     // Draw floating geometric shapes
     for (int i = 0; i < 8; i++) {
       final progress = (animationValue + i * 0.125) % 1.0;
-      final x = size.width * 0.1 + (size.width * 0.8) * math.sin(progress * math.pi * 2);
+      final x =
+          size.width * 0.1 +
+          (size.width * 0.8) * math.sin(progress * math.pi * 2);
       final y = size.height * 0.2 + (size.height * 0.6) * progress;
       final opacity = (1.0 - progress) * 0.2;
-      
+
       paint.color = AppColors.primary.withValues(alpha: opacity);
-      
+
       // Draw hexagon
       final path = Path();
       final radius = 20 + progress * 30;
@@ -269,9 +292,10 @@ class _ShimmerEffectState extends State<ShimmerEffect>
   void initState() {
     super.initState();
     _controller = AnimationController(duration: widget.duration, vsync: this);
-    _animation = Tween<double>(begin: -2, end: 2).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    _animation = Tween<double>(
+      begin: -2,
+      end: 2,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
     _controller.repeat();
   }
 
@@ -338,9 +362,10 @@ class _GlowingOrbState extends State<GlowingOrb>
       duration: const Duration(seconds: 3),
       vsync: this,
     );
-    _animation = Tween<double>(begin: 0.5, end: 1.0).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
+    _animation = Tween<double>(
+      begin: 0.5,
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
     _controller.repeat(reverse: true);
   }
 
@@ -362,7 +387,9 @@ class _GlowingOrbState extends State<GlowingOrb>
             shape: BoxShape.circle,
             gradient: RadialGradient(
               colors: [
-                widget.color.withValues(alpha: _animation.value * widget.intensity),
+                widget.color.withValues(
+                  alpha: _animation.value * widget.intensity,
+                ),
                 widget.color.withValues(alpha: 0.1 * widget.intensity),
                 Colors.transparent,
               ],

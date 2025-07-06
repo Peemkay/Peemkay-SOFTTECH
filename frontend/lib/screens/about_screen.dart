@@ -22,6 +22,7 @@ class AboutScreen extends ConsumerWidget {
 
     return Scaffold(
       body: AnimatedBackground(
+        key: const ValueKey('about_background'),
         enableParticles: true,
         enableGradientShift: true,
         enableFloatingElements: !isMobile,
