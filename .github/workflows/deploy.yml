@@ -23,7 +23,7 @@ jobs:
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build/web
+          path: Peemkay-SOFTTECH/build/web
 
   deploy:
     needs: build
