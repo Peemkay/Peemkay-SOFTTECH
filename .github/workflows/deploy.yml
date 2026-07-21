@@ -18,12 +18,13 @@ jobs:
         run: flutter config --enable-web
         
       - name: Build Web Application
+        working-directory: frontend
         run: flutter build web --release --base-href "/${{ github.event.repository.name }}/"
         
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: Peemkay-SOFTTECH/frontend/build/web
+          path: frontend/build/web
 
   deploy:
     needs: build
@@ -38,4 +39,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
